@@ -1,37 +1,36 @@
 @startuml
 'https://plantuml.com/activity-diagram-beta
-
 start
-:ClickServlet.handleRequest();
-:new page;
-if (Page.onSecurityCheck) then (true)
-  :Page.onInit();
-  if (isForward?) then (no)
-    :Process controls;
-    if (continue processing?) then (no)
-      stop
-    endif
-
-    if (isPost?) then (yes)
-      :Page.onPost();
-    else (no)
-      :Page.onGet();
-    endif
-    :Page.onRender();
-  endif
-else (false)
-endif
-
-if (do redirect?) then (yes)
-  :redirect process;
-else
-  if (do forward?) then (yes)
-    :Forward request;
-  else (no)
-    :Render page template;
-  endif
-endif
-
+:fibonacciIterative(int n);
+if (n < 0) then (true)
+:throw new IllegalArgumentException("Input should be >= 0");
 stop
+endif
+
+if (n > 92) then (true)
+:throw new IllegalArgumentException("Input should be <= 92");
+stop
+endif
+if (n <= 1) then (true)
+:return n;
+stop
+endif
+
+if(fibonacciNumbersDP.containsKey(n)) then (true)
+:return fibonacciNumbersDP.get(n);
+stop
+endif
+:long fibonacciNumber = fibonacciDP(n - 1) + fibonacciDP(n - 2);
+:fibonacciNumbersDP.put(n, fibonacciNumber);
+:return fibonacciNumber;
+stop
+
+
+
+
+
+
+
+
 
 @enduml

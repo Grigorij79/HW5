@@ -10,11 +10,14 @@ public class FibonacciNumbers {
    public static  Map<Integer, Long> fibonacciNumbersDP = new HashMap<>();
 
     public static void main(String[] args) {
-
+        //Spatial complexity fibonacciIterative - O(1)
+        //Temporal difficulty fibonacciIterative - O(n)
         System.out.println("Iterative = " + fibonacciIterative(6));
-
+        //Spatial complexity fibonacciRecursive - O(n)
+        //Temporal difficulty fibonacciRecursive - O(2^n)
         System.out.println("Recursive = " + fibonacciRecursive(6));
-
+        //Spatial complexity fibonacciDP - O(n)
+        //Temporal difficulty fibonacciDP - O(n)
         System.out.println("DP = " + fibonacciDP(6));
 
     }
